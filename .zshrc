@@ -1,9 +1,5 @@
 setopt no_beep
 
-# SSH
-eval `ssh-agent` > /dev/null
-ssh-add /home/kiyotan815/.ssh/id_rsa >& /dev/null
-
 autoload -U compinit && compinit -u
 
 export ZSH_DISABLE_COMPFIX=true
