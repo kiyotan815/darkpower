@@ -61,6 +61,9 @@ alias rdm='rails db:migrate'
 alias rds='rails db:seed'
 alias rr='rails routes'
 
+# tmux ide
+alias ide='source ./tmux_ide.sh'
+
 # direnv
 # eval "$(direnv hook zsh)"
 
