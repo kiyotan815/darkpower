@@ -1,0 +1,128 @@
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+hook_source = '''
+  imap <C-k> <Plug>(neosnippet_expand_or_jump)
+  smap <C-k> <Plug>(neosnippet_expand_or_jump)
+  xmap <C-k> <Plug>(neosnippet_expand_target)
+  if has('conceal')
+    set conceallevel=2 concealcursor=niv
+  endif
+'''
+on_i = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+
+# コードの自動補完
+#[[plugins]]
+
+# neosnippet
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# slimのシンタックスハイライト
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
+
+# メソッドの定義元にジャンプ
+[[plugins]]
+repo = 'szw/vim-tags'
+
+
+#### RUBY #####
+
+# ruby hokan
+[[plugins]]
+repo = 'Shougo/deoplete-rct'
+on_ft = ['ruby']
+
+# Rubyの自動補完
+[[plugins]]
+repo = 'fishbullet/deoplete-ruby'
+on_ft = ['ruby']
+
+# Rubyの自動補完
+[[plugins]]
+repo = 'osyo-manga/vim-monster'
+on_ft = ['ruby']
+on_i = 1
+hook_add = '''
+let g:monster#completion#rcodetools#backend = "async_rct_complete"
+let g:deoplete#sources#omni#input_patterns = {
+  \ "ruby" : '[^. *\t]\.\w*\|\h\w*::',
+  \}
+'''
+
+# Rubyのend補完
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_i = 1
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft =['ruby', 'eruby']
+
+
+[[plugins]]
+repo = 'takkii/ruby-dictionary3'
+on_ft =['ruby']
+
+# rspec-vim
+[[plugins]]
+repo = 'itmammoth/run-rspec.vim'
+on_ft = ['ruby']
+hook_add ='''
+let g:run_rspec_bin = 'bin/rspec'
+'''
+
+
+# unite rails
+[[plugins]]
+repo = 'basyura/unite-rails'
+on_ft = ['ruby', 'eruby']
+
+
+
+# rubocop vim
+[[plugins]]
+repo = 'ngmy/vim-rubocop'
+on_ft = ['ruby']
+
+
+#### javascript #####
+
+# 定番
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+on_ft = ['javascript']
+
+# highlight
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = ['javascript']
+
+# es
+[[plugins]]
+repo = 'othree/es.next.syntax.vim'
+on_ft = ['javascript']
+
+# cssindentation
+repo = 'othree/html5.vim'
+
+# highlight
+[[plugins]]
+repo ='othree/javascript-libraries-syntax.vim'
+on_ft = ['javascript']
+
+# jsx-pretty
+[[plugins]]
+repo = 'maxmellon/vim-jsx-pretty'
+on_ft = ['javascript']
+hook_source = 'let g:vim_jsx_pretty_colorful_config = 1'
+

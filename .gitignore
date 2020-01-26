@@ -1,0 +1,4 @@
+/.vim/.netrwhist
+/.vim/dein/*
+!/.vim/dein/plugins.toml
+!/.vim/dein/lazy.toml
