@@ -64,7 +64,7 @@ alias rr='rails routes'
 # direnv
 # eval "$(direnv hook zsh)"
 
-# rbenv 
+# rbenv
 #eval "$(rbenv init -)"
 
 export PATH="/usr/local/opt/node@8/bin:$PATH"
@@ -74,3 +74,8 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 # g++ 自動実行
 function runcpp () { g++ -O2 $1; ./a.out }
 alias -s {c,cpp}=runcpp
+
+
+# docker with wsl docker for windows share damon
+export DOCKER_HOST=tcp://localhost:2375
+alias docker="DOCKER_HOST=${DOCKER_HOST} docker"
