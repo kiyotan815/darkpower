@@ -24,6 +24,8 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # --prefix=/usr などの = 以降でも補完
 setopt magic_equal_subst
 
+alias vim='nvim'
+
 alias d='docker'
 alias dc='docker-compose'
 
