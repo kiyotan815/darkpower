@@ -1,8 +1,15 @@
 # darkpower
 
-- zsh
-  - zsh compinit
-  - oh my zsh
-- vim8
-  - dein
-- tmux
+- linux
+  - zsh
+    - zsh compinit
+    - oh my zsh
+  - ~~vim8~~
+  - neovim
+    - dein
+  - tmux
+  - pyenv
+  - rbenv
+  - nodebrew
+  - direnv
+
