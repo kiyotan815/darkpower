@@ -134,8 +134,7 @@ let g:unite_source_file_mru_limit = 50
 "file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
 let g:unite_source_file_mru_filename_format = ''
 "現在開いているファイルのディレクトリ下のファイル一覧。
-"開いていない場合はカレントディレクトリ
-nnoremap <silent> [unite]f :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+
 "バッファ一覧
 nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
 "レジスタ一覧

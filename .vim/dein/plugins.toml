@@ -2,6 +2,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# file open darkpower
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
 # 非同期処理全般
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
@@ -13,7 +17,7 @@ repo = 'Shougo/neomru.vim'
 [[plugins]]
 repo = 'vim-scripts/vim-auto-save'
 hook_add = '''
-let g:auto_save_in_insert_mode = 0
+let g:auto_save = 1
 '''
 
 # easy motion
@@ -76,19 +80,11 @@ repo = 'bronson/vim-trailing-whitespace'
 [[plugins]]
 repo = 'rhysd/accelerated-jk'
 
-# /検索強化
-[[plugins]]
-repo = 'osyo-manga/vim-anzu'
-
 # f検索強化
 [[plugins]]
 repo = 'rhysd/clever-f.vim'
 
-# ファイルオープンを便利に
-[[plugins]]
-repo = 'Shougo/unite.vim'
-
-# サイドバー表示
+# directory tree
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 
@@ -99,10 +95,6 @@ repo = 'nathanaelkane/vim-indent-guides'
 # vim上からgit command
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-
-# html css 爆速
-[[plugins]]
-repo = 'mattn/emmet-vim'
 
 # () '' 補完
 repo = 'cohama/lexima.vim'

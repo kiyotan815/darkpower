@@ -62,13 +62,10 @@ alias rds='rails db:seed'
 alias rr='rails routes'
 
 # tmux ide
-alias ide='source ./.tmux_ide.sh'
+alias ide='source ~/.tmux_ide.sh'
 
 # direnv
-# eval "$(direnv hook zsh)"
-
-# rbenv
-#eval "$(rbenv init -)"
+type direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 export PATH="/usr/local/opt/node@8/bin:$PATH"
 export PATH="/usr/local/opt/openssl/bin:$PATH"
@@ -82,3 +79,15 @@ alias -s {c,cpp}=runcpp
 # docker with wsl docker for windows share damon
 export DOCKER_HOST=tcp://localhost:2375
 alias docker="DOCKER_HOST=${DOCKER_HOST} docker"
+
+# rbenv
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
+# node brew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"

@@ -2,3 +2,6 @@
 /.vim/dein/*
 !/.vim/dein/plugins.toml
 !/.vim/dein/lazy.toml
+
+/.config/*
+!/.config/nvim/init.vim

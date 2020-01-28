@@ -1,1 +1,2 @@
-source .zshrc
+source ~/.zshrc
+export EDITOR=vim
