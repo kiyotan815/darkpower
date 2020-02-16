@@ -36,9 +36,14 @@ if dein#check_install()
   call dein#install()
 endif
 
-colorscheme nefertiti
+" color
 syntax enable
 set t_Co=256 "256color
+set termguicolors
+colorscheme molokai
+set background=dark
+highlight Search guibg='Purple' guifg='NONE'
+highlight Visual guibg=#768798 guifg='NONE'
 
 " show . file nerdtreee
 let NERDTreeShowHidden = 1
@@ -68,6 +73,7 @@ set hlsearch
 set encoding=utf-8
 set fileformats=unix,dos,mac
 
+nnoremap <F3> :noh<CR>
 nnoremap <silent><C-e> :NERDTreeToggle<CR>
 noremap : ;
 noremap ; :
@@ -106,6 +112,9 @@ nnoremap sQ :<C-u>bd<CR>
 nnoremap <S-Tab> :tabprev<Return>
 nnoremap <Tab> :tabnext<Return>
 
+nnoremap <leader>w :w<CR>
+nnoremap <leader>q :q!<CR>
+
 call submode#enter_with('bufmove', 'n', '', 's>', '<C-w>>')
 call submode#enter_with('bufmove', 'n', '', 's<', '<C-w><')
 call submode#enter_with('bufmove', 'n', '', 's+', '<C-w>+')
@@ -115,13 +124,12 @@ call submode#map('bufmove', 'n', '', '<', '<C-w><')
 call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
-
 set completeopt+=noinsert
-
+set clipboard=unnamedplus
 
 "unite prefix key.
 nnoremap [unite] <Nop>
-nmap <Space>f [unite]
+nmap <leader>f [unite]
 
 "unite keyconfig
 noremap <C-P> :Unite buffer<CR>
@@ -132,7 +140,7 @@ noremap <C-Z> :Unite file_mru<CR>
 "インサートモードで開始
 let g:unite_enable_start_insert = 1
 "最近開いたファイル履歴の保存数
-let g:unite_source_file_mru_limit = 50
+let g:unite_source_file_mru_limit = 100
 "file_mruの表示フォーマットを指定。空にすると表示スピードが高速化される
 let g:unite_source_file_mru_filename_format = ''
 "現在開いているファイルのディレクトリ下のファイル一覧。
