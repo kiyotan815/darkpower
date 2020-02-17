@@ -11,5 +11,6 @@
   - pyenv
   - rbenv
   - nodebrew
+  - nvm
   - direnv
 
