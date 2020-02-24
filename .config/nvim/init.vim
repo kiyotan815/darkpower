@@ -21,7 +21,6 @@ endif
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
   call dein#add(s:dein_repo_dir)
-  call dein#add('Shougo/deoplete.nvim')
 
   call dein#load_toml(s:dein_dir . '/plugins.toml', {'lazy': 0})
   call dein#load_toml(s:dein_dir . '/lazy.toml', {'lazy': 1})
@@ -40,14 +39,18 @@ endif
 syntax enable
 set t_Co=256 "256color
 set termguicolors
-colorscheme molokai
 set background=dark
+colorscheme molokai
+highlight Normal guibg='NONE' guifg='NONE'
+highlight LineNr guibg='NONE' guifg='#888888'
 highlight Search guibg='Purple' guifg='NONE'
 highlight Visual guibg=#768798 guifg='NONE'
+highlight qfLineNr guifg=#c0c0c0
 
 " show . file nerdtreee
 let NERDTreeShowHidden = 1
 
+set clipboard+=unnamed
 set nobackup
 set noswapfile
 set autoread
@@ -111,6 +114,8 @@ nnoremap sq :<C-u>q<CR>
 nnoremap sQ :<C-u>bd<CR>
 nnoremap <S-Tab> :tabprev<Return>
 nnoremap <Tab> :tabnext<Return>
+noremap <S-h> ^
+noremap <S-l> $
 
 nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q!<CR>
@@ -125,7 +130,6 @@ call submode#map('bufmove', 'n', '', '+', '<C-w>+')
 call submode#map('bufmove', 'n', '', '-', '<C-w>-')
 
 set completeopt+=noinsert
-set clipboard=unnamedplus
 
 "unite prefix key.
 nnoremap [unite] <Nop>
@@ -135,7 +139,6 @@ nmap <leader>f [unite]
 noremap <C-P> :Unite buffer<CR>
 noremap <C-N> :Unite -buffer-name=file file<CR>
 noremap <C-Z> :Unite file_mru<CR>
-
 "unite general settings
 "インサートモードで開始
 let g:unite_enable_start_insert = 1
@@ -174,3 +177,6 @@ function! s:unite_my_settings()"{{{
 	nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 	inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 endfunction"}}}
+
+let g:node_host_prog = system('echo -n $(which neovim-node-host)')
+

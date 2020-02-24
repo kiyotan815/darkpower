@@ -34,6 +34,8 @@ if dein#check_install()
   call dein#install()
 endif
 
+
+set clipboard+=unnamedplus
 colorscheme nefertiti
 syntax enable
 set t_Co=256 "256color
@@ -164,3 +166,6 @@ function! s:unite_my_settings()"{{{
 	nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 	inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 endfunction"}}}
+
+
+

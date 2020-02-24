@@ -6,3 +6,5 @@
 /.config/direnv/*
 /.config/configstore/*
 /.config/pulse/*
+
+/.config/yarn/*

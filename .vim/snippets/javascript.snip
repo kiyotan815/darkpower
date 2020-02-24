@@ -1,0 +1,51 @@
+snippet :f
+options head
+  ${1:#:method_name}: function(${2:#:attribute}) {
+    ${0:TARGET}
+  }
+
+snippet function
+abbr    func
+options word
+  function ${1:#:function_name}(${2:#:argument}) {
+    ${0:TARGET}
+  }
+
+snippet f
+options word
+  function(${1}) { ${0:TARGET} };
+
+snippet if
+options head
+  if (${1:true}) {
+    ${0:TARGET}
+  }
+
+snippet try
+options head
+  try {
+    ${1:TARGET}
+  } catch (${2:e}) {
+    ${3}
+  }
+
+snippet key-value
+alias kv
+abbr :,
+options word
+  ${1:#:value_name}: ${0:#:value},
+
+snippet console-log
+alias cl
+options head
+  console.log(${0:TARGET});
+
+snippet     import
+abbr        import { member, ... } from 'module-name';
+options     head
+  import { ${1:MEMBERS} } from '${0:TARGET}';
+
+snippet     import-default
+abbr        import defaultMember from 'module-name';
+options     head
+  import ${1:defaultMember} from '${0:TARGET}';

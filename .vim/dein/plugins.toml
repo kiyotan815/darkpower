@@ -2,6 +2,10 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+# snippets
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
 # file open darkpower
 [[plugins]]
 repo = 'Shougo/unite.vim'
@@ -11,34 +15,18 @@ repo = 'Shougo/unite.vim'
 repo = 'Shougo/vimproc.vim'
 
 # Unite neomru
+[[plugins]]
 repo = 'Shougo/neomru.vim'
 
 # autosave
-[[plugins]]
-repo = 'vim-scripts/vim-auto-save'
-hook_add = '''
-let g:auto_save = 1
-'''
-
-# deoplete
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#enable_camel_case = 0
-let g:deoplete#enable_ignore_case = 0
-let g:deoplete#enable_refresh_always = 0
-let g:deoplete#enable_smart_case = 1
-let g:deoplete#file#enable_buffer_path = 0
-let g:deoplete#max_list = 100
-set previewheight=5
-highlight Pmenu ctermbg=8 guibg=#606060
-highlight PmenuSbar ctermbg=0 guibg=#d6d6d6
-inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<tab>"
-inoremap <expr><S-Tab> pumvisible() ? "\<C-P>" : "\<S-Tab>"
-'''
+#[[plugins]]
+#repo = 'vim-scripts/vim-auto-save'
+#hook_add = '''
+#let g:auto_save = 1
+#'''
 
 # easy motion
+[[plugins]]
 repo = 'Lokaltog/vim-easymotion'
 
 # vim-submode
@@ -115,4 +103,6 @@ repo = 'nathanaelkane/vim-indent-guides'
 repo = 'tpope/vim-fugitive'
 
 # () '' 補完
+[[plugins]]
 repo = 'cohama/lexima.vim'
+
