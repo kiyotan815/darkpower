@@ -5,13 +5,14 @@ options head
   }
 
 snippet function
+alias func
 abbr    func
 options word
   function ${1:#:function_name}(${2:#:argument}) {
     ${0:TARGET}
   }
 
-snippet f
+snippet fc
 options word
   function(${1}) { ${0:TARGET} };
 
@@ -29,6 +30,10 @@ options head
     ${3}
   }
 
+snippet const
+options head
+  const ${1} = ${0:TARGET};
+
 snippet key-value
 alias kv
 abbr :,
@@ -41,11 +46,42 @@ options head
   console.log(${0:TARGET});
 
 snippet     import
+alias imp
 abbr        import { member, ... } from 'module-name';
 options     head
   import { ${1:MEMBERS} } from '${0:TARGET}';
 
 snippet     import-default
+alias impd
 abbr        import defaultMember from 'module-name';
 options     head
   import ${1:defaultMember} from '${0:TARGET}';
+
+snippet rcc
+abbr react Class Component
+options head
+  class ${1:componentName} extends Component {
+    constructor(props) {
+      super(props);
+    }
+
+    render() {
+      return (
+        <div>${0:TARGET}</div>
+      )
+    }
+  }
+
+snippet rfc
+abbr react Functional Component
+options head
+  function ${1:componentName}(${2:props}) {
+    return (
+      <div>${3}</div>
+    );
+  }
+
+snippet edf
+abbr export default
+options head
+  export default ${0:TARGET}

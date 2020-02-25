@@ -1,3 +1,3 @@
 source ~/.zshrc
-export EDITOR=vim
+export EDITOR=nvim
 source ~/.path

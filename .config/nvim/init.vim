@@ -71,6 +71,9 @@ set smartcase
 set incsearch
 set laststatus=2
 
+" auto cd current buffer path
+set autochdir
+
 set wrapscan
 set hlsearch
 set encoding=utf-8
