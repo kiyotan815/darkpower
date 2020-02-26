@@ -1,0 +1,56 @@
+snippet arrowFunction
+alias af, arrw
+abbr arrow function
+options word
+  const ${1} = (${2}) => {
+    ${3}
+  }
+
+snippet rfc
+abbr react Functional Component
+options head
+  function ${1:componentName}(${2:props}) {
+    return (
+      <div>${3}</div>
+    )
+  }
+
+snippet rcc
+abbr react Class Component
+options head
+  class ${1:componentName} extends Component {
+    constructor(props) {
+      super(props)
+    }
+
+    render() {
+      return (
+        <div>${0:TARGET}</div>
+      )
+    }
+  }
+
+snippet useState
+alias ush
+abbr react useState hook
+options head
+  const [${1}, set${2}] = useState(${3})
+
+snippet useEffect
+alias ueh
+abbr react useEffect hook
+options head
+  useEffect(() => {
+    ${1}
+  })
+
+snippet useEffectReturn
+alias uehr
+abbr react useEffect hook
+options head
+  useEffect(() => {
+    ${1}
+    return () => {
+      ${2}
+    }
+  })

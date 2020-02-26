@@ -1,3 +1,5 @@
+include react.snip
+
 snippet :f
 options head
   ${1:#:method_name}: function(${2:#:attribute}) {
@@ -10,14 +12,6 @@ abbr function() {}
 options word
   function ${1:#:function_name}(${2:#:argument}) {
     ${0:TARGET}
-  }
-
-snippet arrow
-alias af, arrw
-abbr arrow function
-options word
-  const ${1} = (${2}) => {
-    ${3}
   }
 
 snippet fc
@@ -70,53 +64,8 @@ abbr        import defaultMember from 'module-name'
 options     head
   import ${1:defaultMember} from '${0:TARGET}'
 
-snippet rcc
-abbr react Class Component
-options head
-  class ${1:componentName} extends Component {
-    constructor(props) {
-      super(props)
-    }
-
-    render() {
-      return (
-        <div>${0:TARGET}</div>
-      )
-    }
-  }
-
-snippet rfc
-abbr react Functional Component
-options head
-  function ${1:componentName}(${2:props}) {
-    return (
-      <div>${3}</div>
-    )
-  }
-
-snippet edf
+snippet export-default
+alias edf
 abbr export default
 options head
   export default ${0:TARGET}
-
-snippet ush
-abbr react useState hook
-options head
-  const [${1}, set${2}] = useState(${3})
-
-snippet ueh
-abbr react useEffect hook
-options head
-  useEffect(() => {
-    ${1}
-  })
-
-snippet uehr
-abbr react useEffect hook
-options head
-  useEffect(() => {
-    ${1}
-    return () => {
-      ${2}
-    }
-  })
