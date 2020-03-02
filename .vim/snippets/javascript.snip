@@ -25,7 +25,7 @@ options head
   }
 
 snippet try
-options head
+options word
   try {
     ${1:TARGET}
   } catch (${2:e}) {
@@ -33,7 +33,7 @@ options head
   }
 
 snippet const
-options head
+options word
   const ${1} = ${0:TARGET}
 
 snippet key-value
@@ -44,7 +44,7 @@ options word
 
 snippet console-log
 alias cl
-options head
+options word
   console.log(${0:TARGET})
 
 snippet console-error
@@ -56,13 +56,13 @@ snippet     import
 alias imp
 abbr        import { member, ... } from 'module-name'
 options     head
-  import { ${1:MEMBERS} } from '${0:TARGET}'
+  import { ${2} } from '${1}'
 
 snippet     import-default
 alias impd
 abbr        import defaultMember from 'module-name'
 options     head
-  import ${1:defaultMember} from '${0:TARGET}'
+  import ${2} from '${1}'
 
 snippet export-default
 alias edf
