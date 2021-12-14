@@ -183,3 +183,7 @@ endfunction"}}}
 
 let g:node_host_prog = system('echo -n $(which neovim-node-host)')
 
+let g:ale_linters = {
+       \'javascript': ['eslint', 'fecs', 'flow', 'flow-language-server', 'jscs', 'jshint', 'standard', 'xo']
+
+\}

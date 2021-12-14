@@ -1,3 +1,4 @@
+export EDITOR=nvim
 setopt no_beep
 
 autoload -U compinit && compinit -u
@@ -40,6 +41,7 @@ alias g.='git add .'
 alias gm='git commit -m '
 alias gs='git status'
 alias gc='git checkout'
+alias gcm='git checkout master'
 alias gb='git branch'
 alias gpo='git push origin'
 
@@ -67,6 +69,7 @@ type direnv > /dev/null 2>&1 && eval "$(direnv hook zsh)"
 
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
+export PATH=$HOME/.symfony/bin:$PATH
 
 # g++ 自動実行
 function runcpp () { g++ -O2 $1; ./a.out }
@@ -74,8 +77,8 @@ alias -s {c,cpp}=runcpp
 
 
 # docker with wsl docker for windows share damon
-export DOCKER_HOST=tcp://localhost:2375
-alias docker="DOCKER_HOST=${DOCKER_HOST} docker"
+#export DOCKER_HOST=tcp://localhost:2375
+#alias docker="DOCKER_HOST=${DOCKER_HOST} docker"
 
 # rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -85,8 +88,8 @@ eval "$(rbenv init -)"
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+#export PYENV_ROOT="$HOME/.pyenv"
+#export PATH="$PYENV_ROOT/bin:$PATH"
+#eval "$(pyenv init -)"
 
 # eval `ssh-agent`

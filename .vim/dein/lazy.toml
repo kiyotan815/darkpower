@@ -1,18 +1,22 @@
 [[plugins]]
 repo = 'pangloss/vim-javascript'
-on_ft = ['javascript', 'javascript.jsx', 'typescript']
+on_ft = ['javascript', 'javascript.jsx', 'typescript', 'typescriptreact']
 
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
-on_ft = ['typescript']
+on_ft = ['typescript', 'typescriptreact']
 
 [[plugins]]
 repo = 'HerringtonDarkholme/yats.vim'
-on_ft = ['javascript', 'javascript.jsx', 'typescript']
+on_ft = ['javascript', 'javascript.jsx', 'typescript', 'typescriptreact']
 
 [[plugins]]
 repo = 'maxmellon/vim-jsx-pretty'
-on_ft = ['javascript', 'javascript.jsx', 'typescript']
+on_ft = ['javascript', 'javascript.jsx', 'typescript', 'typescriptreact']
+
+[[plugins]]
+repo = 'flowtype/vim-flow'
+on_ft = ['javascript', 'javascript.jsx', 'typescript', 'typescriptreact']
 
 # [[plugins]]
 # repo = 'alampros/vim-styled-jsx'
@@ -23,8 +27,12 @@ repo = 'moll/vim-node'
 on_ft = ['javascript', 'typescript']
 
 [[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = ['ruby']
+
+[[plugins]]
 repo = 'dense-analysis/ale'
-on_ft = ['javascript', 'ruby', 'typescript']
+on_ft = ['javascript', 'ruby', 'typescript', 'typescriptreact']
 on_source = ['lightline.vim']
 
 hook_add = '''
@@ -65,3 +73,12 @@ hook_source = '''
 '''
 on_i  = 1
 on_ft = ['snippet']
+
+[[plugins]]
+repo = 'nelsyeung/twig.vim'
+on_ft = ['javascript', 'javascript.jsx', 'typescript']
+
+[[plugins]]
+repo  = 'phpactor/phpactor'
+on_ft = ['php']
+build = 'composer install'
