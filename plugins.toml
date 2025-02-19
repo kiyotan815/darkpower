@@ -1,0 +1,108 @@
+# plugin管理
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# snippets
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
+
+# file open darkpower
+[[plugins]]
+repo = 'Shougo/unite.vim'
+
+# 非同期処理全般
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+
+# Unite neomru
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+# autosave
+#[[plugins]]
+#repo = 'vim-scripts/vim-auto-save'
+#hook_add = '''
+#let g:auto_save = 1
+#'''
+
+# easy motion
+[[plugins]]
+repo = 'Lokaltog/vim-easymotion'
+
+# vim-submode
+[[plugins]]
+repo = 'kana/vim-submode'
+
+# colorschema
+[[plugins]]
+repo = 'chriskempson/vim-tomorrow-theme'
+
+# color solarized
+[[plugins]]
+repo = 'ujihisa/unite-colorscheme'
+
+# color twilight
+[[plugins]]
+repo = 'vim-scripts/twilight'
+
+# color molokai
+[[plugins]]
+repo = 'tomasr/molokai'
+
+# color material
+[[plugins]]
+repo = 'jdkanani/vim-material-theme'
+
+# color nefertiti
+[[plugins]]
+repo = 'jeetsukumaran/vim-nefertiti'
+
+
+# statusline
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
+      \ }
+'''
+
+# インデントを可視化
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+
+# 無駄な空白をハイライト
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
+
+# j, k高速化
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+
+# f検索強化
+[[plugins]]
+repo = 'rhysd/clever-f.vim'
+
+# directory tree
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+# インデントを見やすくしてくれる
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+
+# vim上からgit command
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# () '' 補完
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
