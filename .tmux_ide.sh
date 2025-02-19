@@ -1,3 +1,3 @@
 #!/usr/bin/zsh
-tmux split-window -v -p 25
-tmux split-window -h -p 60
+tmux split-window -v -l 40%
+tmux split-window -h -l 60%

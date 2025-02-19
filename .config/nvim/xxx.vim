@@ -6,8 +6,14 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
+require("avante").setup({
+  ai = {
+    provider = "openai",
+  }
+})
+
 " dein setup
-let s:dein_dir = expand('~/darkpower/.vim/dein')
+let s:dein_dir = expand('~/.vim/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
 if &runtimepath !~# '/dein.vim'
@@ -20,7 +26,7 @@ endif
 
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
-  call dein#add(s:dein_repo_dir)
+  "a call dein#add(s:dein_repo_dir)
 
   call dein#load_toml(s:dein_dir . '/plugins.toml', {'lazy': 0})
   call dein#load_toml(s:dein_dir . '/lazy.toml', {'lazy': 1})
@@ -136,7 +142,7 @@ set completeopt+=noinsert
 
 "unite prefix key.
 nnoremap [unite] <Nop>
-nmap <leader>f [unite]
+nmap <leader><leader> [unite]
 
 "unite keyconfig
 noremap <C-P> :Unite buffer<CR>
@@ -170,12 +176,12 @@ function! s:unite_my_settings()"{{{
 	imap <buffer> jj <Plug>(unite_insert_leave)
 	"入力モードのときctrl+wでバックスラッシュも削除
 	imap <buffer> <C-w> <Plug>(unite_delete_backward_path)
-	"ctrl+jで縦に分割して開く
-	nnoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-	inoremap <silent> <buffer> <expr> <C-j> unite#do_action('split')
-	"ctrl+jで横に分割して開く
-	nnoremap <silent> <buffer> <expr> <C-k> unite#do_action('vsplit')
-	inoremap <silent> <buffer> <expr> <C-k> unite#do_action('vsplit')
+	"ctrl+sで縦に分割して開く
+	nnoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
+	inoremap <silent> <buffer> <expr> <C-s> unite#do_action('split')
+	"ctrl+aで横に分割して開く
+	nnoremap <silent> <buffer> <expr> <C-a> unite#do_action('vsplit')
+	inoremap <silent> <buffer> <expr> <C-a> unite#do_action('vsplit')
 	"ctrl+oでその場所に開く
 	nnoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
 	inoremap <silent> <buffer> <expr> <C-o> unite#do_action('open')
@@ -183,7 +189,9 @@ endfunction"}}}
 
 let g:node_host_prog = system('echo -n $(which neovim-node-host)')
 
-let g:ale_linters = {
-       \'javascript': ['eslint', 'fecs', 'flow', 'flow-language-server', 'jscs', 'jshint', 'standard', 'xo']
+nnoremap <silent> <leader>u :PhpactorImportClass<CR>
 
-\}
+map <Leader>f <Plug>(easymotion-prefix)
+nmap <Leader>j <Plug>(easymotion-w)
+nmap <Leader>k <Plug>(easymotion-b)
+
