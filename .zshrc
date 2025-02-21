@@ -6,7 +6,7 @@ autoload -U compinit && compinit -C  # `compinit` のキャッシュを使用し
 # `oh-my-zsh` の読み込み
 export ZSH_DISABLE_COMPFIX=true
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="robbyrussell"  # 軽量テーマ推奨
+ZSH_THEME="miloshadzic"
 source $ZSH/oh-my-zsh.sh
 
 # コマンド補完の設定

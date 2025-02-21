@@ -87,10 +87,10 @@ map("n", "sq", ":q<CR>", { silent = true })
 map("n", "sQ", ":bd<CR>", { silent = true })
 
 -- サブモード（ウィンドウリサイズ）
-map("n", "s>", "<C-w>>")
-map("n", "s<", "<C-w><")
-map("n", "s+", "<C-w>+")
-map("n", "s-", "<C-w>-")
+map("n", "s>", "<C-w>10>")
+map("n", "s<", "<C-w>10<")
+map("n", "s+", "<C-w>10+")
+map("n", "s-", "<C-w>10-")
 
 -- ファイルエンコーディング
 set.encoding = "utf-8"
