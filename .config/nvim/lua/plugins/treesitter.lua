@@ -5,7 +5,9 @@ return {
     event = "VeryLazy",  -- 🔥 Neovim 起動時に適用
     config = function()
       require("nvim-treesitter.configs").setup({
-        ensure_installed = "all",  -- 🔥 すべてのパーサーをインストール
+        ensure_installed = {
+          "php", "lua", "javascript", "json", "html", "ruby", "typescript", "tsx", "yaml", "nginx"
+        },
         highlight = { enable = true },  -- シンタックスハイライトを有効化
         indent = { enable = true },  -- 自動インデント
         incremental_selection = {
