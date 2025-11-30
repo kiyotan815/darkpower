@@ -141,6 +141,20 @@ install_tilix() {
     fi
 }
 
+# xclipのインストール (Ubuntu only)
+install_xclip() {
+    if [ "$OS" = "ubuntu" ]; then
+        if ! command -v xclip &> /dev/null; then
+            echo_info "Installing xclip..."
+            sudo apt-get update
+            sudo apt-get install -y xclip
+            echo_success "xclip installed"
+        else
+            echo_success "xclip is already installed"
+        fi
+    fi
+}
+
 # oh-my-zshのインストール
 install_oh_my_zsh() {
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -234,6 +248,7 @@ install_build_essential
 install_zsh
 install_tmux
 install_tilix
+install_xclip
 install_oh_my_zsh
 install_nvim
 install_docker
