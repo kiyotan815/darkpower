@@ -21,17 +21,7 @@ return {
           "jsonls",
         },
       })
-
-      local lspconfig = require("lspconfig")
-
-      require("mason-lspconfig").setup_handlers({
-        function(server_name)
-          -- solargraphは個別に設定済みのため除外
-          if server_name ~= "solargraph" then
-            lspconfig[server_name].setup({})
-          end
-        end,
-      })
+      -- setup_handlers は不要（nvim-lspconfig.lua で vim.lsp.config/enable を使用）
     end
   }
 }
