@@ -155,6 +155,37 @@ install_xclip() {
     fi
 }
 
+# weztermのインストール (Ubuntu only)
+install_wezterm() {
+    if [ "$OS" = "ubuntu" ]; then
+        if ! command -v wezterm &> /dev/null; then
+            echo_info "Installing wezterm..."
+            curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+            echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+            sudo apt-get update
+            sudo apt-get install -y wezterm
+            echo_success "wezterm installed"
+        else
+            echo_success "wezterm is already installed"
+        fi
+    fi
+}
+
+# Google Chromeのインストール (Ubuntu only)
+install_chrome() {
+    if [ "$OS" = "ubuntu" ]; then
+        if ! command -v google-chrome &> /dev/null; then
+            echo_info "Installing Google Chrome..."
+            wget -q -O /tmp/google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo apt-get install -y /tmp/google-chrome.deb
+            rm /tmp/google-chrome.deb
+            echo_success "Google Chrome installed"
+        else
+            echo_success "Google Chrome is already installed"
+        fi
+    fi
+}
+
 # oh-my-zshのインストール
 install_oh_my_zsh() {
     if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -218,6 +249,30 @@ install_docker() {
     fi
 }
 
+# pyenvのインストール
+install_pyenv() {
+    if [ ! -d "$HOME/.pyenv" ]; then
+        echo_info "Installing pyenv dependencies..."
+        case $OS in
+            ubuntu)
+                sudo apt-get update
+                sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
+                    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+                    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev \
+                    libffi-dev liblzma-dev
+                ;;
+            macos)
+                brew install openssl readline sqlite3 xz zlib tcl-tk
+                ;;
+        esac
+        echo_info "Installing pyenv..."
+        curl https://pyenv.run | bash
+        echo_success "pyenv installed"
+    else
+        echo_success "pyenv is already installed"
+    fi
+}
+
 # nvmのインストール
 install_nvm() {
     if [ ! -d "$HOME/.nvm" ]; then
@@ -249,9 +304,12 @@ install_zsh
 install_tmux
 install_tilix
 install_xclip
+install_wezterm
+install_chrome
 install_oh_my_zsh
 install_nvim
 install_docker
+install_pyenv
 install_nvm
 
 # dotfilesのシンボリックリンク作成
