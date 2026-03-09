@@ -3,7 +3,6 @@ return {
     "neovim/nvim-lspconfig",
     dependencies = { "hrsh7th/cmp-nvim-lsp" },
     config = function()
-      local lspconfig = require("lspconfig")
       local cmp_nvim_lsp = require("cmp_nvim_lsp")
 
       local capabilities = cmp_nvim_lsp.default_capabilities({
@@ -17,16 +16,16 @@ return {
       })
 
       -- TypeScript LSP
-      lspconfig.ts_ls.setup({
+      vim.lsp.config('ts_ls', {
         capabilities = capabilities,
       })
 
       -- Ruby (Solargraph)
-      lspconfig.solargraph.setup({
+      vim.lsp.config('solargraph', {
         capabilities = capabilities,
         cmd = { "solargraph", "stdio" },
         filetypes = { "ruby" },
-        root_dir = lspconfig.util.root_pattern("Gemfile", ".git"),
+        root_markers = { "Gemfile", ".git" },
         settings = {
           solargraph = {
             diagnostics = true,
@@ -47,7 +46,7 @@ return {
       })
 
       -- PHP (intelephense)
-      lspconfig.intelephense.setup({
+      vim.lsp.config('intelephense', {
         capabilities = capabilities,
         settings = {
           intelephense = {
@@ -59,19 +58,22 @@ return {
       })
 
       -- HTML
-      lspconfig.html.setup({
+      vim.lsp.config('html', {
         capabilities = capabilities,
       })
 
       -- CSS
-      lspconfig.cssls.setup({
+      vim.lsp.config('cssls', {
         capabilities = capabilities,
       })
 
       -- JSON
-      lspconfig.jsonls.setup({
+      vim.lsp.config('jsonls', {
         capabilities = capabilities,
       })
+
+      -- 全て有効化
+      vim.lsp.enable({ 'ts_ls', 'solargraph', 'intelephense', 'html', 'cssls', 'jsonls' })
     end
   }
 }
