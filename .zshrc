@@ -10,8 +10,7 @@ ZSH_THEME="miloshadzic"
 source $ZSH/oh-my-zsh.sh
 
 # コマンド補完の設定
-setopt correct       # コマンドミスを修正
-zstyle ':completion:*' menu select  # 補完候補の選択を楽に
+setopt correct       # コマンドミスを修正 zstyle ':completion:*' menu select  # 補完候補の選択を楽に
 setopt list_packed   # 補完候補を詰めて表示
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # 大文字小文字区別なし
 setopt magic_equal_subst  # `--prefix=/usr` の `=` 以降も補完
@@ -84,3 +83,6 @@ fi
 if [ -x "/opt/homebrew/bin/brew" ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
+
+eval "$(mise activate zsh)"
+export PATH="$HOME/.local/bin:$PATH"
